@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html>
+
+<!-- Mirrored from www.youtubescreenshot.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 Feb 2017 15:49:30 GMT -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Screenshots from YouTube Videos</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="app.js"></script>
+
+
+<link href="style.min.css" rel="stylesheet">
+
+<style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+      }
+
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 80px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 80px;
+        line-height: 1;
+      }
+      .jumbotron .lead {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+	  .jumbotron input {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+	  .screenshots {display:none;}
+	  
+	  .hd {text-align:center;}
+	  
+	  ul.thumbnails {padding-top:30px;}
+	  
+	  .footer {text-align:center;}
+
+
+    video {  
+   width:100%; 
+   max-width:1920px; 
+   height:auto; 
+}
+    </style>
+</head>
+
+
+<body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "../connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+	<div class="container">
+
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>Screenshots from YouTube Video</h1>
+        <p class="lead">Ever wonder how to get screenshots / thumbnails from a YouTube video? <br>
+Just copy and paste a link of a video below.</p>
+        <div class="input-append">
+          <input class="span5" id="videourl" type="text" placeholder="http://www.youtube.com/watch?v=">
+          <button class="btn btn-success" id="url-submit" type="button">Show screenshots</button>
+        </div>
+        <p class="example">Example: http://www.youtube.com/watch?v=6ychdzz6UEA</p>
+        <div class="fb-like" data-href="http://youtubescreenshot.com/" data-send="true" data-width="450" data-show-faces="true"></div>
+      </div>
+
+      <hr>
+      <div class="row-fluid" id="custom" style="display:none;">
+        <div class="span12" style="text-align:center;">
+          <h2>*NEW* Take a screenshot from custom position</h2>
+          <div id="ytvideo" style="margin:20px;">
+             
+          </div>
+          <button class="btn btn-success btn-large" id="snap" type="button">Take Screenshot</button>
+        </div>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row-fluid screenshots">
+        <div class="span12">
+        	<div class="hd">
+          	<h3>High quality YouTube screenshot</h3>
+            <p>(if available) Right click to save as</p>
+            <div id="resolution" style="display:none;">
+              <form class="form-inline">
+                <div class="form-group">
+                  <label for="width">Width</label>
+                  <input type="text" class="form-control" id="width" placeholder="width">
+                </div>
+                <div class="form-group">
+                  <label for="height">Height *</label>
+                  <input type="text" class="form-control" id="height" placeholder="height">
+                  <br>(* leave empty to keep aspect ratio)
+                </div>
+                <button type="button" id="resize" class="btn btn-default">Resize</button>
+              </form>
+            </div>
+            <img id="mainshot" src="#" alt="">   
+            <canvas id="canvas"></canvas> 
+          </div>
+        </div>
+        
+        <div class="row-fluid">
+            <ul class="thumbnails">
+                <li class="ss0 span3">
+                    <div class="thumbnail">
+                        <img class="span12" src="#" alt="">
+                        <h3>Normal quality</h3>
+                        <p>Size: 480x360. <br>
+Right click to save as</p>
+                    </div>
+                </li>
+                <li class="ss1 span3">
+                    <div class="thumbnail">
+                        <img class="span12" src="#" alt="">
+                        <h3>Thumbnail quality</h3>
+                        <p>Size: 120x90. <br>
+Right click to save as</p>
+                    </div>
+                </li>
+                <li class="ss2 span3">
+                    <div class="thumbnail">
+                        <img class="span12" src="#" alt="">
+                        <h3>Thumbnail quality</h3>
+                        <p>Size: 120x90. <br>
+Right click to save as</p>
+                    </div>
+                </li>
+                <li class="ss3 span3">
+                    <div class="thumbnail">
+                        <img class="span12" src="#" alt="">
+                        <h3>Thumbnail quality</h3>
+                        <p>Size: 120x90. <br>
+Right click to save as</p>
+                    </div>
+                </li>               
+            </ul>
+		</div> 
+	</div>
+
+      <hr>
+
+      <div class="footer">
+        <p>&copy; YouTubeScreenshot.com / hesesses@gmail.com</p>
+      </div>
+
+    </div> <!-- /container -->
+
+</body>
+
+</html>
